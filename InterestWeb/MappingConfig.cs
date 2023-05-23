@@ -12,6 +12,7 @@ namespace InterestWeb
             CreateMap<InterestDto, InterestUpdateDto>().ReverseMap();
 
             CreateMap<InterestListDto, InterestListCreateDto>().ReverseMap();
+            CreateMap<InterestListDto, InterestListUpdateDto>().ReverseMap();
 
             CreateMap<Person, PersonCreateDto>().ReverseMap();
             CreateMap<Person, PersonUpdateDto>().ReverseMap();

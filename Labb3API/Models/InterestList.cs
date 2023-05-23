@@ -7,13 +7,17 @@ namespace APILabb.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Required]
         public int InterestListId { get; set; }
+        [Required]
         [ForeignKey("Interest")]
         public int FK_InterestId { get; set; }
         public Interest Interest { get; set; }
+        [Required]
         [ForeignKey("Person")]
         public int FK_PersonId { get; set; }
         public Person Person { get; set; }
+        [Required]
         public string PageUrl { get; set; }
     }
 }

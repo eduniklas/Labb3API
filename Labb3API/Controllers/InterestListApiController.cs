@@ -148,7 +148,7 @@ namespace APILabb.Controllers
         [HttpPut("{id:int}", Name = "UpdateInterestList")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ApiResponse>> UpdateInterestList(int id, [FromBody] InterestListCreateDto updateDto)
+        public async Task<ActionResult<ApiResponse>> UpdateInterestList(int id, [FromBody] InterestListUpdateDto updateDto)
         {
             try
             {

@@ -14,6 +14,7 @@ namespace APILabb
 
             CreateMap<InterestList, InterestListDto>().ReverseMap();
             CreateMap<InterestList, InterestListCreateDto>().ReverseMap();
+            CreateMap<InterestList, InterestListUpdateDto>().ReverseMap();
 
             CreateMap<Person, PersonDto>().ReverseMap();
             CreateMap<Person, PersonCreateDto>().ReverseMap();
