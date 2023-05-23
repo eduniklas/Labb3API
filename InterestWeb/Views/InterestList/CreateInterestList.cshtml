@@ -1,0 +1,44 @@
+﻿@model InterestWeb.Models.DTO.InterestListCreateDto
+
+@{
+    ViewData["Title"] = "CreateInterestList";
+}
+
+<h1>CreateInterestList</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateInterestList">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InterestListId" class="control-label"></label>
+                <input asp-for="InterestListId" class="form-control" />
+                <span asp-validation-for="InterestListId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FK_InterestId" class="control-label"></label>
+                <input asp-for="FK_InterestId" class="form-control" />
+                <span asp-validation-for="FK_InterestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FK_PersonId" class="control-label"></label>
+                <input asp-for="FK_PersonId" class="form-control" />
+                <span asp-validation-for="FK_PersonId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PageUrl" class="control-label"></label>
+                <input asp-for="PageUrl" class="form-control" />
+                <span asp-validation-for="PageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="IndexInterestList">Back to List</a>
+</div>
+

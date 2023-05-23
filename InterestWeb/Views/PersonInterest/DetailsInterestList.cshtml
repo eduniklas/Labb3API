@@ -1,0 +1,45 @@
+﻿@model IEnumerable<InterestWeb.Models.DTO.InterestListDto>
+
+@{
+    ViewData["Title"] = "DetailsInterestList";
+}
+
+<h1>DetailsInterestList</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model=>model.Interest)</th>
+                <th>@Html.DisplayNameFor(model=>model.Interest.Description)</th>
+                <th>@Html.DisplayNameFor(model=> model.Person)</th>
+                <th>@Html.DisplayNameFor(model=> model.PageUrl)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Interest.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Interest.Description)</td>
+                    <td>
+                        @Html.DisplayFor(modelItem=> item.Person.FirstName)
+                        @Html.DisplayFor(modelItem=> item.Person.LastName)
+                    </td>
+                    <td>@Html.DisplayFor(modelItem=> item.PageUrl)</td>
+                </tr>
+        }
+    </dl>
+</div>
+<div>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    <a asp-controller="InterestList" asp-action="IndexInterestList">Back to List</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

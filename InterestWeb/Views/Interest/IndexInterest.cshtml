@@ -1,0 +1,32 @@
+﻿@model IEnumerable<InterestWeb.Models.DTO.InterestDto>
+
+<br/>
+<div class="container p-4 border">
+    <div>
+        <a asp-controller="Interest" asp-action="CreateInterest" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Add new interest</a>
+    </div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Interest</th>
+            <th>@Html.DisplayNameFor(model=> model.Description)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>
+                    <td>
+                        <a asp-controller="Interest" asp-action="UpdateInterest" asp-route-interestId="@item.InterestId" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-controller="Interest" asp-action="DeleteInterest" asp-route-interestId="@item.InterestId" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                    </td>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+</div>

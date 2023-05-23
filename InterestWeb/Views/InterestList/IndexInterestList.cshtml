@@ -1,0 +1,40 @@
+﻿@model IEnumerable<InterestWeb.Models.DTO.InterestListDto>
+
+<h1>InterestList</h1>
+
+<br />
+<div class="container p-4 border">
+    <div>
+        <a asp-controller="InterestList" asp-action="CreateInterestList" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Add new interest list</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model=>model.Interest)</th>
+                <th>@Html.DisplayNameFor(model=> model.Person)</th>
+                <th>@Html.DisplayNameFor(model=> model.PageUrl)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Interest.Name)</td>
+                    <td>
+                        @Html.DisplayFor(modelItem=> item.Person.FirstName)
+                        @Html.DisplayFor(modelItem=> item.Person.LastName)
+                    </td>
+                    <td>@Html.DisplayFor(modelItem=> item.PageUrl)</td>
+                    <td>
+                    <td>
+                        <a asp-controller="InterestList" asp-action="UpdateInterestList" asp-route-interestListId="@item.InterestListId" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-controller="PersonInterest" asp-action="DetailsInterestList" asp-route-fk_PersonId="@item.FK_PersonId" class="btn btn-outline-success"><i class="bi bi-book"></i></a>
+                        @*<a asp-controller="InterestList" asp-action="DeleteInterestList" asp-route-interestListId="@item.InterestListId" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></a>*@
+                    </td>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

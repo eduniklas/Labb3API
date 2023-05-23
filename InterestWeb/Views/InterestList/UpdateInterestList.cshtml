@@ -1,0 +1,51 @@
+﻿@model InterestWeb.Models.DTO.InterestListUpdateDto
+
+@{
+    ViewData["Title"] = "UpdateInterestList";
+}
+
+<form asp-action="UpdateInterestList">
+    <br />
+    <div class="container border p-1">
+        <h1 class="text-primary">Update Interest List</h1>
+        <hr />
+        <input hidden asp-for=InterestListId />
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-2">
+                <label asp-for="FK_InterestId" class="control-label"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="FK_InterestId" class="form-control" />
+                <span asp-validation-for="FK_InterestId" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="FK_PersonId" class="control-label"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="FK_PersonId" class="form-control" rows="3" />
+                <span asp-validation-for="FK_PersonId" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="PageUrl" class="control-label"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="PageUrl" class="form-control" rows="3" />
+                <span asp-validation-for="PageUrl" class="text-danger"></span>
+            </div>
+            <div class="col-2 offset-2">
+                <a asp-action="IndexInterestList" asp-controller="InterestList" class="btn-primary btn form-control">Back to List</a>
+            </div>
+            <div class="col-2">
+                <input type="submit" value="Update" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
